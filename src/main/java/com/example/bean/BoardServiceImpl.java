@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class BoardServicelmpl {
+public class BoardServiceImpl implements BoardService{
     @Autowired
     BoardDAO boardDAO;
     @Override
@@ -26,10 +26,6 @@ public class BoardServicelmpl {
     }
     @Override
     public List <BoardVO> getBoardList() {
-        return boardDAO.getBoardList();
-    }
-    @Autowired
-    public List<BoardVO> getBoardList() {
         return boardDAO.getBoardList();
     }
 
