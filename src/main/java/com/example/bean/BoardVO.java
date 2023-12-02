@@ -8,17 +8,7 @@ public class BoardVO {
     private String writer;
     private String content;
     private Date regdate;
-    private String editdate;
     private String category;
-    private int cnt;
-
-    public String getEditdate() {
-        return editdate;
-    }
-
-    public void setEditdate(String editdate) {
-        this.editdate = editdate;
-    }
 
     public String getCategory() {
         return category;
@@ -68,11 +58,4 @@ public class BoardVO {
         this.regdate = regdate;
     }
 
-    public int getCnt() {
-        return cnt;
-    }
-
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
-    }
 }

@@ -1,8 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.example.bean.BoardDAO" %>
+<%@ page import="com.example.bean.BoardVO" %>
+<%@ page import="java.util.List" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
 
-<%@page import="com.example.bean.BoardDAO, com.example.bean.BoardVO,java.util.*"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="path" value="${pageContext. request.contextPath}" />
 <html>
 <head>
     <title>Title</title>
@@ -36,20 +37,16 @@
         color: white;
     }
 </style>
-<%
-    BoardDAO boardDAO = new BoardDAO();
-    List<BoardVO> list = boardDAO.getBoardList();
-    request.setAttribute("list",list);
-%>
+
 <script>
     function delete_ok(id){
         var a = confirm("정말로 삭제하겠습니까?");
         if(a) location.href='deleteok/' + id;
     }
 </script>
+
 <body>
 <h1>자유게시판</h1>
-
 <table id="list" width="90%">
     <tr>
         <th>Id</th>
@@ -60,6 +57,7 @@
         <th>Regdate</th>
         <th>Edit</th>
         <th>Delete</th>
+        <th>SHOW</th>
     </tr>
 
     <c:forEach items="${list}" var="u">
@@ -72,9 +70,11 @@
             <td>${u.regdate}</td>
             <td><a href="editform/${u.seq}">Edit</a></td>
             <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
+            <td><a href="SHOW/${u.seq}">SHOW</a></td>
         </tr>
     </c:forEach>
 </table>
+
 
 <br/><button type="button" onclick="location.href='add'">Add</button>
 </body>
