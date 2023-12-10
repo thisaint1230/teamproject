@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BoardController {
 
     @Autowired
-    BoardServiceImpl boardService;
+    BoardService boardService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String boardlist(Model model) {
         model.addAttribute("list", boardService.getBoardList());
         return "list";
     }
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addpost() {
         return "addpostform";
@@ -39,28 +40,28 @@ public class BoardController {
         model.addAttribute("u", boardVO);
         return "editform";
     }
-    @RequestMapping(value = "/editok", method = RequestMethod.POST)
-    public String editPostOk(BoardVO vo) {
-        if (boardService.updateBoard(vo) == 0)
-            System.out.println("데이터 수정 실패 ");
-        else
-            System.out.println("데이터 수정 성공!!!");
-        return "redirect:list";
-    }
-    @RequestMapping(value = "/SHOW/{id}", method = RequestMethod.GET)
-    public String SHOWpost(@PathVariable("id") int id, Model model)
-    {
-        BoardVO boardVO = boardService.getBoard(id);
-        model.addAttribute("u", boardVO);
-        return "SHOW";
-    }
-        @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-        public String deletePostOk(@PathVariable("id") int id) {
-            if (boardService.deleteBoard(id) == 0)
-                System.out.println("데이터 삭제 실패 ");
-            else
-                System.out.println("데이터 삭제 성공!!!");
-            return "redirect:../list";
-        }
+//    @RequestMapping(value = "/editok", method = RequestMethod.POST)
+//    public String editPostOk(BoardVO vo) {
+//        if (boardService.updateBoard(vo) == 0)
+//            System.out.println("데이터 수정 실패 ");
+//        else
+//            System.out.println("데이터 수정 성공!!!");
+//        return "redirect:list";
+//    }
+//    @RequestMapping(value = "/SHOW/{id}", method = RequestMethod.GET)
+//    public String SHOWpost(@PathVariable("id") int id, Model model)
+//    {
+//        BoardVO boardVO = boardService.getBoard(id);
+//        model.addAttribute("u", boardVO);
+//        return "SHOW";
+//    }
+//        @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
+//        public String deletePostOk(@PathVariable("id") int id) {
+//            if (boardService.deleteBoard(id) == 0)
+//                System.out.println("데이터 삭제 실패 ");
+//            else
+//                System.out.println("데이터 삭제 성공!!!");
+//            return "redirect:../list";
+//        }
 
 }
