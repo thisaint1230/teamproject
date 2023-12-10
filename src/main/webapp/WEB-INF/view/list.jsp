@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.example.bean.BoardDAO" %>
-<%@ page import="com.example.bean.BoardVO" %>
+<%@ page import="com.example.Board.BoardDAO" %>
+<%@ page import="com.example.Board.BoardVO" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
 
@@ -50,27 +50,33 @@
 <table id="list" width="90%">
     <tr>
         <th>Id</th>
-        <th>Category</th>
-        <th>Title</th>
-        <th>Writer</th>
-        <th>Content</th>
-        <th>Regdate</th>
-        <th>Edit</th>
+        <th>photo</th>
+        <th>category</th>
+        <th>name</th>
+        <th>price</th>
+        <th>seller</th>
+        <th>city</th>
+        <th>possibleDelivery</th>
+        <th>regdate</th>
+        <th>edit</th>
         <th>Delete</th>
         <th>SHOW</th>
     </tr>
 
     <c:forEach items="${list}" var="u">
         <tr>
-            <td>${u.seq}</td>
+            <td>${u.id}</td>
+            <td>${u.photo}</td>
             <td>${u.category}</td>
-            <td>${u.title}</td>
-            <td>${u.writer}</td>
-            <td>${u.content}</td>
+            <td>${u.name}</td>
+            <td>${u.price}</td>
+            <td>${u.seller}</td>
+            <td>${u.city}</td>
+            <td>${u.possibleDelivery}</td>
             <td>${u.regdate}</td>
-            <td><a href="editform/${u.seq}">Edit</a></td>
-            <td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
-            <td><a href="SHOW/${u.seq}">SHOW</a></td>
+            <td><a href="editform/${u.id}">Edit</a></td>
+            <td><a href="javascript:delete_ok('${u.id}')">Delete</a></td>
+            <td><a href="SHOW/${u.id}">SHOW</a></td>
         </tr>
     </c:forEach>
 </table>

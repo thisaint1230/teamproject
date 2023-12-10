@@ -1,12 +1,13 @@
-package com.example.bean;
+package com.example;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class StartController {
     @RequestMapping("/")
-    public String hello(){
-        return "home";
+    public String home(){
+        return "redirect:/login/login";
     }
+
 }

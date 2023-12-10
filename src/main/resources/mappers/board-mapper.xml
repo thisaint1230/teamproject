@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
-<insert id="insertBoard">insert into BOARD (category, title, writer, content) values(#{category} , #{title} , #{writer} , #{content})</insert>
-<update id="updateBoard">update BOARD set title=#{title}, content=#{content}, writer=#{writer}, category=#{category}where seq=#{seq}</update>
-<delete id="deleteBoard">delete from BOARD where seq=#{seq}</delete>
-<select id="getBoard" resultType ="board">select * from BOARD where seq=#{seq}</select>
-<select id="getBoardList" resultType = "board">select * from BOARD order by seq desc</select>
+<insert id="insertBoard">insert into data (photo,category,name,price, seller, city,possibleDelivery) values( #{photo} ,#{category} ,#{name} ,#{price} ,#{seller} ,#{city} ,#{possibleDelivery})</insert>
+<update id="updateBoard">update data set   photo =#{photo} ,category =#{category} ,name =#{name} ,price =#{price} ,seller =#{seller} ,city =#{city} ,possibleDelivery =#{possibleDelivery}
+</update>
+<delete id="deleteBoard">delete from data where id=#{id}</delete>
+<select id="getBoard" resultType ="board">select * from data where id=#{id}</select>
+<select id="getBoardList" resultType = "board">select * from data order by id desc</select>
 
 </mapper>

@@ -22,7 +22,7 @@
         <tr><td>내용</td><td><form:textarea cols="50" rows="5" path="content" /></td></tr>
     </table>
     <input type="submit" value="수정하기" />
-    <input type="button" value="취소하기" onclick="history"/>
+    <input type="button" value="취소하기" onclick="location.href='../list'"/>
 </form:form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.example.bean;
+package com.example.Board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,6 @@ public class BoardController {
 
     @Autowired
     BoardService boardService;
-
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String boardlist(Model model) {
         model.addAttribute("list", boardService.getBoardList());
