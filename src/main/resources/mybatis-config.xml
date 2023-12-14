@@ -3,6 +3,6 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="board" type="com.example.Board.BoardVO"/>
-       <typeAlias alias="user" type="com.example.user.UserVO"/>
+        <typeAlias alias="user" type="com.example.user.UserVO"/>
     </typeAliases>
 </configuration>
