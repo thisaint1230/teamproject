@@ -32,35 +32,32 @@ public class BoardController {
             System.out.println("데이터 추가 성공!!!");
         return "redirect:list";
     }
+
+
     @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
-    public String editPost(@PathVariable("id") int id, Model model)
-    {
+    public String edit(@PathVariable("id") int id, Model model) {
         BoardVO boardVO = boardService.getBoard(id);
-        model.addAttribute("u", boardVO);
+        model.addAttribute("u" , boardVO);
         return "editform";
     }
-//    @RequestMapping(value = "/editok", method = RequestMethod.POST)
-//    public String editPostOk(BoardVO vo) {
-//        if (boardService.updateBoard(vo) == 0)
-//            System.out.println("데이터 수정 실패 ");
-//        else
-//            System.out.println("데이터 수정 성공!!!");
-//        return "redirect:list";
-//    }
-//    @RequestMapping(value = "/SHOW/{id}", method = RequestMethod.GET)
-//    public String SHOWpost(@PathVariable("id") int id, Model model)
-//    {
-//        BoardVO boardVO = boardService.getBoard(id);
-//        model.addAttribute("u", boardVO);
-//        return "SHOW";
-//    }
-//        @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-//        public String deletePostOk(@PathVariable("id") int id) {
-//            if (boardService.deleteBoard(id) == 0)
-//                System.out.println("데이터 삭제 실패 ");
-//            else
-//                System.out.println("데이터 삭제 성공!!!");
-//            return "redirect:../list";
-//        }
+
+    @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable ("id") int id) {
+        if(boardService.deleteBoard(id) == 0)
+            System.out.println("데이터 삭제 실패 ");
+        else
+            System.out.println("데이터 삭제 성공!!!");
+        return "redirect:../list";
+    }
+
+    @RequestMapping(value = "/editok", method = RequestMethod.POST)
+    public String editPostOk(BoardVO vo) {
+        if(boardService.updateBoard(vo) == 0)
+            System.out.println("데이터 수정 실패 ");
+        else
+            System.out.println("데이터 수정 성공!!!");
+        return "redirect:list";
+    }
+
 
 }

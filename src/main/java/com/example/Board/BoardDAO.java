@@ -14,12 +14,18 @@ public class BoardDAO {
         int result = sqlSession.insert("Board.insertBoard", vo);
         return result;
     }
-//    public int deleteBoard(int seq) {
-//        String sql = " delete from BOARD where seq = " + seq;
-//
-//        return 3;
-//    }
-//
+
+    public int deleteBoard(int id) {
+      int result = sqlSession.delete("Board.deleteBoard", id);
+      return result;
+    }
+
+    public int updateBoard(BoardVO vo) {
+        int result = sqlSession.update("Board.updateBoard", vo);
+        return result;
+    }
+
+
 //    public int updateBoard(BoardVO vo) {
 //        String sql = "update BOARD set "
 //                + "title='" + vo.getTitle() + "',"
