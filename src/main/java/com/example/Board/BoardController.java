@@ -41,13 +41,13 @@ public class BoardController {
         return "editform";
     }
 
-    @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete{id}", method = RequestMethod.GET)
     public String delete(@PathVariable ("id") int id) {
         if(boardService.deleteBoard(id) == 0)
             System.out.println("데이터 삭제 실패 ");
         else
             System.out.println("데이터 삭제 성공!!!");
-        return "redirect:../list";
+        return "redirect:list";
     }
 
     @RequestMapping(value = "/editok", method = RequestMethod.POST)
