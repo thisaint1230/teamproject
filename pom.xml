@@ -5,7 +5,7 @@
   <artifactId>teamproject</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>sfsf Maven Webapp</name>
+  <name>teamproject Maven Webapp</name>
 
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -68,6 +68,11 @@
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.25</version>
+    </dependency>
 
 
   </dependencies>
