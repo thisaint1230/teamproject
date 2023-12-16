@@ -26,17 +26,8 @@ public class BoardDAO {
     }
 
 
-//    public int updateBoard(BoardVO vo) {
-//        String sql = "update BOARD set "
-//                + "title='" + vo.getTitle() + "',"
-//                + "writer='" + vo.getWriter() + "',"
-//                + "content='" + vo.getContent() + "', "
-//                + "category='" + vo.getCategory() + "' where seq=" + vo.getSeq();
-//        return 3;
-//    }
-
-    public BoardVO getBoard (int seq) {
-        BoardVO one = sqlSession.selectOne("Board.getBoard", seq) ;
+    public BoardVO getBoard (int id) {
+        BoardVO one = sqlSession.selectOne("Board.getBoard", id) ;
         return one;
 }
 

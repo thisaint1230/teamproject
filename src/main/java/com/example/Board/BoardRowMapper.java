@@ -10,8 +10,8 @@ public class BoardRowMapper implements RowMapper<BoardVO> {
         public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
             BoardVO vo = new BoardVO();
             vo.setId(rs.getInt("id"));
-            vo.setPhoto(rs.getString("photo"));
-            vo.setCategory (rs.getString("category"));
+            vo.setProductCondition(rs.getString("productCondition"));
+            vo.setCategory(rs.getString("category"));
             vo.setName(rs.getString("name"));
             vo.setPrice(rs.getInt("price"));
             vo.setSeller(rs.getString("seller"));

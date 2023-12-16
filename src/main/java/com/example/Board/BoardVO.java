@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class BoardVO {
     private int id;
-    private String photo;
+    private String productCondition;
     private String category;
     private String name;
     private int price;
@@ -22,12 +22,12 @@ public class BoardVO {
         this.id = id;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getProductCondition() {
+        return productCondition;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setProductCondition(String productCondition) {
+        this.productCondition = productCondition;
     }
 
     public String getCategory() {

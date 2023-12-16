@@ -7,8 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<script src="https://app.embed.im/snow.js" defer></script>
+
 <head>
     <style>
+        body { background-color: lightblue; }
         h1{
             border-bottom: 1px solid black;
             padding-left: 1rem;
@@ -44,18 +47,24 @@
 <table id="list" width="90%">
     <tr>
         <th>Id</th>
-        <th>Category</th>
-        <th>Title</th>
-        <th>Writer</th>
-        <th>Content</th>
-        <th>Regdate</th>
+        <th>condition</th>
+        <th>category</th>
+        <th>name</th>
+        <th>price</th>
+        <th>seller</th>
+        <th>city</th>
+        <th>possibleDelivery</th>
+        <th>regdate</th>
     </tr>
     <tr>
-        <td>${u.seq}</td>
+        <td>${u.id}</td>
+        <td>${u.productCondition}</td>
         <td>${u.category}</td>
-        <td>${u.title}</td>
-        <td>${u.writer}</td>
-        <td>${u.content}</td>
+        <td>${u.name}</td>
+        <td>${u.price}</td>
+        <td>${u.seller}</td>
+        <td>${u.city}</td>
+        <td>${u.possibleDelivery}</td>
         <td>${u.regdate}</td>
     </tr>
 </table>

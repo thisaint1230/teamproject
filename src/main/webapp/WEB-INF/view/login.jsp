@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="https://app.embed.im/snow.js" defer></script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +16,8 @@
     <style>
         img,label { display:inline-block;}
         label{ width:130px}
+        body { background-color: lightblue; }
+
         button{
             background-color:blue;
             color:white;

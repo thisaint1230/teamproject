@@ -3,6 +3,7 @@
 <%@ page import="com.example.Board.BoardVO" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8"%>
+<script src="https://app.embed.im/snow.js" defer></script>
 
 <html>
 <head>
@@ -36,6 +37,9 @@
         background-color: #006bb3;
         color: white;
     }
+    #l_c {background-color: #f2f2f2;
+    }
+    body { background-color: lightblue; }
 </style>
 
 <script>
@@ -46,30 +50,31 @@
 </script>
 
 <body>
+
 <h1>자유게시판</h1>
 <table id="list" width="90%">
     <tr>
-        <th>Id</th>
-        <th>photo</th>
-        <th>category</th>
-        <th>name</th>
-        <th>price</th>
-        <th>seller</th>
-        <th>city</th>
-        <th>possibleDelivery</th>
-        <th>regdate</th>
-        <th>edit</th>
-        <th>Delete</th>
-        <th>SHOW</th>
+        <th>제품 번호</th>
+        <th>제품 상태</th>
+        <th>제품 종류</th>
+        <th>제품 이름</th>
+        <th>제품 가격</th>
+        <th>판매자 이름</th>
+        <th>판매 지역</th>
+        <th>배달 가능 여부</th>
+        <th>입력날짜</th>
+        <th>수정버튼</th>
+        <th>삭제버튼</th>
+        <th>자세히보기</th>
     </tr>
 
     <c:forEach items="${list}" var="u">
-        <tr>
+        <tr id="l_c">
             <td>${u.id}</td>
-            <td>${u.photo}</td>
+            <td>${u.productCondition}</td>
             <td>${u.category}</td>
             <td>${u.name}</td>
-            <td>${u.price}</td>
+            <td>${u.price}원</td>
             <td>${u.seller}</td>
             <td>${u.city}</td>
             <td>${u.possibleDelivery}</td>
